@@ -14,3 +14,7 @@ steps:
 - script: |
     npm install
   displayName: 'Code Build'
+
+- script: |
+    npm run test
+  displayName: 'Unit Tests'
