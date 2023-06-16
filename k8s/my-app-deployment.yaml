@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app-container
+          image: frankdevg/test-node:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: my-app-configmap
+            - secretRef:
+                name: my-app-secret
