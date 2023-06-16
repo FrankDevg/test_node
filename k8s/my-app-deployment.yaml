@@ -21,4 +21,4 @@ spec:
             - configMapRef:
                 name: my-app-configmap
             - secretRef:
-                name: my-app-secret
+                name: my-database-credentials
