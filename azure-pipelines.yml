@@ -47,7 +47,8 @@ steps:
         latest
     displayName: 'Push Docker Image'
 
-  - task: AnchoreContainerScan@0
-    inputs:
-      image: 'frankdevg/test-node:$(Build.BuildId)'
-    displayName: 'Container Vulnerability Scan'
+  - script: |
+      wget https://github.com/aquasecurity/trivy/releases/download/v0.17.2/trivy_0.17.2_Linux-64bit.tar.gz
+      tar zxvf trivy_0.17.2_Linux-64bit.tar.gz
+      ./trivy --exit-code 1 --no-progress frankdevg/test-node:latest
+    displayName: 'Run Trivy Vulnerability Scan'
