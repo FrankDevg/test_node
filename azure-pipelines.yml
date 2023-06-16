@@ -53,6 +53,12 @@ steps:
       ./trivy --exit-code 1 --no-progress frankdevg/test-node:latest
     displayName: 'Run Trivy Vulnerability Scan'
 
+  - task: CopyFiles@2
+    displayName: 'Copy Kubernetes files'
+    inputs:
+      SourceFolder: 'k8s'
+      TargetFolder: '$(System.DefaultWorkingDirectory)/k8s'
+
   - task: Kubernetes@1
     displayName: 'Deploy to Kubernetes'
     inputs:
@@ -62,4 +68,4 @@ steps:
       kubernetesCluster: 'test-node' 
       useClusterAdmin: true
       command: 'apply'
-      arguments: '-f my-app-configmap.yaml -f $(System.DefaultWorkingDirectory)/my-app-secret.yaml -f $(System.DefaultWorkingDirectory)/my-app-deployment.yaml -f $(System.DefaultWorkingDirectory)/my-app-service.yaml -f $(System.DefaultWorkingDirectory)/my-app-ingress.yaml -f $(System.DefaultWorkingDirectory)/my-app-hpa.yaml -f $(System.DefaultWorkingDirectory)/my-app-pdb.yaml'
+      arguments: '-f $(System.DefaultWorkingDirectory)/k8s/my-app-configmap.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-secret.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-deployment.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-service.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-ingress.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-hpa.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-pdb.yaml'
