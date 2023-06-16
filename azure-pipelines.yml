@@ -52,3 +52,18 @@ steps:
       tar zxvf trivy_0.17.2_Linux-64bit.tar.gz
       ./trivy --exit-code 1 --no-progress frankdevg/test-node:latest
     displayName: 'Run Trivy Vulnerability Scan'
+
+  - script: |
+      az account set --subscription 71db5f6f-213f-4447-b05b-3a839cae0f7a
+      az aks get-credentials --resource-group test-node --name test-node
+    displayName: 'Configure AKS Credentials'
+
+  - task: Kubernetes@1
+    displayName: 'Deploy to Kubernetes'
+    inputs:
+      connectionType: 'Azure Resource Manager'
+      azureSubscriptionEndpoint: 'your-azure-subscription-endpoint'
+      azureResourceGroup: 'your-resource-group'
+      kubernetesCluster: 'your-kubernetes-cluster'
+      command: 'apply'
+      arguments: '-f my-app-configmap.yaml -f my-app-secret.yaml -f my-app-deployment.yaml -f my-app-service.yaml -f my-app-ingress.yaml -f my-app-hpa.yaml -f my-app-pdb.yaml'
