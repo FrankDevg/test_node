@@ -46,3 +46,8 @@ steps:
         $(Build.BuildId)
         latest
     displayName: 'Push Docker Image'
+
+  - task: AnchoreContainerScan@0
+    inputs:
+      image: 'frankdevg/test-node:$(Build.BuildId)'
+    displayName: 'Container Vulnerability Scan'
