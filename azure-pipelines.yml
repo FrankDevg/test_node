@@ -25,3 +25,24 @@ steps:
   - script: |
       npm run coverage
     displayName: 'Code Coverage'
+
+  - task: Docker@2
+    inputs:
+      command: 'build'
+      containerRegistry: 'Docker Hub'
+      repository: 'frankdevg/test-node'
+      Dockerfile: '**/Dockerfile'
+      tags: |
+        $(Build.BuildId)
+        latest
+    displayName: 'Build Docker Image'
+
+  - task: Docker@2
+    inputs:
+      command: 'push'
+      containerRegistry: 'Docker Hub'
+      repository: 'frankdevg/test-node'
+      tags: |
+        $(Build.BuildId)
+        latest
+    displayName: 'Push Docker Image'
