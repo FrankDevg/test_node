@@ -1,3 +1,8 @@
+variables:
+  - name: DOCKER_USERNAME
+    value: franklindbruiz@gmail.com
+  - name: DOCKER_PASSWORD
+    value: 8GppRWmNn25%RC&
 trigger:
   branches:
     include:
