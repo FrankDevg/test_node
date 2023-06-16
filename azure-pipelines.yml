@@ -62,7 +62,7 @@ steps:
     displayName: 'Deploy to Kubernetes'
     inputs:
       connectionType: 'Azure Resource Manager'
-      azureSubscriptionEndpoint: 'test-node-ge2gm5d4.hcp.eastus.azmk8s.io' 
+      azureSubscriptionEndpoint: 'AKS Service' 
       azureResourceGroup: 'test-node'
       kubernetesCluster: 'test-node-ge2gm5d4.hcp.eastus.azmk8s.io' 
       command: 'apply'
