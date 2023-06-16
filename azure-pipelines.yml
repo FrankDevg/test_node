@@ -16,5 +16,5 @@ steps:
   displayName: 'Code Build'
 
 - script: |
-    npm run test
+    npm test
   displayName: 'Unit Tests'
