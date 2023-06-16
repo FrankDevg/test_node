@@ -4,7 +4,7 @@ metadata:
   name: my-app-ingress
 spec:
   rules:
-    - host: montra-test-node-FranklinRuiz
+    - host: devsutestnodefranklinruiz
       http:
         paths:
           - path: /
