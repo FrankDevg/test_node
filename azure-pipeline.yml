@@ -1,44 +1,27 @@
-variables:
-  - name: DOCKER_USERNAME
-    value: franklindbruiz@gmail.com
-  - name: DOCKER_PASSWORD
-    value: 8GppRWmNn25%RC&
 trigger:
-  branches:
-    include:
-      - main
+  - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 steps:
-- script: npm install
-  displayName: 'Install dependencies'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Install Node.js'
 
-- script: npm run test
-  displayName: 'Run unit tests'
+  - script: |
+      npm install
+    displayName: 'Code Build'
 
-- script: npm run lint
-  displayName: 'Static code analysis'
+  - script: |
+      npm test
+    displayName: 'Unit Tests'
 
-- script: npm run coverage
-  displayName: 'Code coverage'
+  - script: |
+      npm run lint
+    displayName: 'Static Code Analysis'
 
-- script: |
-    # Build and push Docker image
-    docker build -t node-test:$(Build.BuildId) .
-    docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
-    docker push $(DOCKER_USERNAME)/node-test:$(Build.BuildId)
-  displayName: 'Docker Build & Push'
-
-- script: |
-    # Vulnerability Scan
-    # Install Trivy
-    wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_$(uname -s)_$(uname -m).deb
-    sudo dpkg -i trivy_$(uname -s)_$(uname -m).deb
-
-    # Run vulnerability scan with Trivy
-    trivy image --severity HIGH,CRITICAL $(DOCKER_USERNAME)/node-test:$(Build.BuildId)
-  displayName: 'Vulnerability Scan'
-
-
+  - script: |
+      npm run coverage
+    displayName: 'Code Coverage'
