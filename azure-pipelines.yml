@@ -46,3 +46,21 @@ steps:
         $(Build.BuildId)
         latest
     displayName: 'Push Docker Image'
+
+  - script: |
+      wget https://github.com/aquasecurity/trivy/releases/download/v0.17.2/trivy_0.17.2_Linux-64bit.tar.gz
+      tar zxvf trivy_0.17.2_Linux-64bit.tar.gz
+      ./trivy --exit-code 1 --no-progress frankdevg/test-node:latest
+    displayName: 'Run Trivy Vulnerability Scan'
+
+  - task: Kubernetes@1
+    displayName: 'Deploy to Kubernetes'
+    inputs:
+      connectionType: 'Azure Resource Manager'
+      azureSubscriptionEndpoint: 'AKS Service' 
+      azureResourceGroup: 'test-node'
+      kubernetesCluster: 'test-node' 
+      useClusterAdmin: true
+      command: 'apply'
+      arguments: '-f my-app-configmap.yaml -f my-app-secret.yaml -f my-app-deployment.yaml -f my-app-service.yaml -f my-app-ingress.yaml -f my-app-hpa.yaml -f my-app-pdb.yaml'
+      
