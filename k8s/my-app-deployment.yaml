@@ -12,6 +12,9 @@ spec:
       labels:
         app: my-app
     spec:
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
       containers:
         - name: my-app-container
           image: frankdevg/test-node:latest
