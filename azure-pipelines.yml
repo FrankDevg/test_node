@@ -68,4 +68,4 @@ steps:
       kubernetesCluster: 'test-node' 
       useClusterAdmin: true
       command: 'apply'
-      arguments: '-f $(System.DefaultWorkingDirectory)/k8s/my-app-configmap.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-secret.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-deployment.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-service.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-ingress.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-hpa.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-pdb.yaml'
+      arguments: '-f $(System.DefaultWorkingDirectory)/k8s/my-app-configmap.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-secret.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-deployment.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-service.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-hpa.yaml -f $(System.DefaultWorkingDirectory)/k8s/my-app-pdb.yaml'
