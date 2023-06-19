@@ -20,7 +20,7 @@ spec:
           image: frankdevg/test-node:latest
           ports:
             - containerPort: 3000
-          command: ["sh", "-c", "node start.js"]
+          command: ["sh", "-c", "npm start"]
           envFrom:
             - configMapRef:
                 name: my-app-configmap
