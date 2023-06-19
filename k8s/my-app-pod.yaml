@@ -1,13 +1,19 @@
 apiVersion: v1
 kind: Pod
-metadata: 
+metadata:
   name: my-app-pod
   labels:
     app: my-app
     type: microservice
-spec: 
+spec:
   containers:
-    - name: my-app
-      image: frankdevg/test-node:latest
-      ports: 
-        - containerPort: 80
+  - name: my-app-container
+    image: frankdevg/test-node:latest
+    ports:
+    - containerPort: 3000
+    command: ["sh", "-c", "npm start"]
+    envFrom:
+      - configMapRef:
+            name: my-app-configmap
+      - secretRef:
+            name: my-database-credentials
