@@ -4,7 +4,7 @@ metadata:
   name: my-app-ingress
 spec:
   rules:
-    - host: 52.186.108.4
+    - host: franklinruizweb
       http:
         paths:
           - path: /
