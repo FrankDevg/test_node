@@ -1,28 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: my-app-deploy
+  labels:
+    name: my-app-deploy
+    app: microservice
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: my-app
+      type: microservice
   template:
     metadata:
+      name: my-app-pod
       labels:
         app: my-app
+        type: microservice
     spec:
-      securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
       containers:
-        - name: my-app-container
-          image: frankdevg/test-node:latest
-          ports:
-            - containerPort: 3000
-          command: ["sh", "-c", "npm start"]
-          envFrom:
-            - configMapRef:
-                name: my-app-configmap
-            - secretRef:
-                name: my-database-credentials
+      - name: my-app-container
+        image: frankdevg/test-node:latest
+        ports:
+        - containerPort: 3000
+        command: ["sh", "-c", "npm start"]
+        envFrom:
+          - configMapRef:
+              name: my-app-configmap
+          - secretRef:
+              name: my-database-credentials
