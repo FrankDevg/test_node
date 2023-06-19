@@ -8,6 +8,8 @@ ENV PORT=3000
 ENV NODE_ENV=production
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S appuser -u 1001
+RUN chown -R appuser:nodejs /usr/src/app
+RUN chmod 777 ./dev.sqlite
 USER appuser
 EXPOSE $PORT
 HEALTHCHECK --interval=30s --timeout=5s \
