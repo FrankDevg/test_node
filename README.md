@@ -29,10 +29,12 @@ For the deployment of this application, the following decisions were made:
    - **Copy K8s and Deploy Kubernetes **:  The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources.
 
 The deployment manifest specifies the desired number of replicas, container image, and other configuration parameters. It ensures that the application is deployed and running inside the Kubernetes cluster. The service manifest exposes the deployed application internally or externally, allowing other services or users to access it.
+
    ![Pipeline Diagram](https://media.discordapp.net/attachments/789543560374255679/1120775399341834371/d3265c7f-c59e-48a6-ba84-da53ef26b936.png?width=175&height=422)
+   
 3. **Kubernetes Deployment**: The Dockerized application was deployed on Kubernetes. The deployment was set up to ensure the application is production-ready. The following resources were used:
 
- 
+
 
    - **ConfigMaps**: Kubernetes ConfigMaps were used to store configuration data that can be consumed by the application.
 
