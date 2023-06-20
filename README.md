@@ -28,7 +28,7 @@ For the deployment of this application, the following decisions were made:
 
 3. **Kubernetes Deployment**: The Dockerized application was deployed on Kubernetes. The deployment was set up to ensure the application is production-ready. The following resources were used:
 
-   ![Architecture Diagram](![image](https://github.com/FrankDevg/test_node/assets/52903207/6b8d7bcc-d30f-4316-acc0-caada8ed954f)
+   (![image](https://github.com/FrankDevg/test_node/assets/52903207/6b8d7bcc-d30f-4316-acc0-caada8ed954f)
 )
 
    - **ConfigMaps**: Kubernetes ConfigMaps were used to store configuration data that can be consumed by the application.
