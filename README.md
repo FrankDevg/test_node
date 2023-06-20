@@ -1,142 +1,59 @@
-# Demo Devops NodeJs
+# Demo DevOps Node.js
 
 This is a simple application to be used in the technical test of DevOps.
 
-## Getting Started
+## Deployment Decisions
 
-### Prerequisites
+For the deployment of this application, the following decisions were made:
 
-- Node.js 18.15.0
+1. **Dockerization**: The application was containerized using Docker. The Dockerfile was created to package the application and its dependencies into a Docker image. The following considerations were taken into account:
+   - Environment variables
+   - Run user
+   - Port configuration
+   - Health check setup
 
-### Installation
+2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
-Clone this repo.
+   ![Pipeline Diagram](pipeline.png)
 
-```bash
-git clone https://bitbucket.org/devsu/demo-devops-nodejs.git
-```
+   - **Code Build**: The application's source code is built and compiled to generate the executable files and necessary artifacts.
 
-Install dependencies.
+   - **Unit Tests**: Automated tests are executed to verify the correctness of the application's individual units or components.
 
-```bash
-npm i
-```
+   - **Static Code Analysis**: Static code analysis tools are used to analyze the source code for potential bugs, vulnerabilities, and adherence to coding standards.
 
-### Database
+   - **Code Coverage**: Code coverage tools are employed to measure the percentage of code exercised by the automated tests.
 
-The database is generated as a file in the main path when the project is first run, and its name is `dev.sqlite`.
+   - **Docker Build & Push**: The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment.
 
-Consider giving access permissions to the file for proper functioning.
+3. **Kubernetes Deployment**: The Dockerized application was deployed on Kubernetes. The deployment was set up to ensure the application is production-ready. The following resources were used:
 
-## Usage
+   ![Architecture Diagram](architecture.png)
 
-To run tests you can use this command.
+   - **ConfigMaps**: Kubernetes ConfigMaps were used to store configuration data that can be consumed by the application.
 
-```bash
-npm run test
-```
+   - **Secrets**: Sensitive information, such as API keys or database credentials, was stored securely in Kubernetes Secrets.
 
-To run locally the project you can use this command.
+   - **Ingress**: An Ingress resource was defined to expose the application to external traffic. However, it is important to note that in the given scenario, the Ingress functionality was not fully implemented due to resource constraints.
 
-```bash
-npm run start
-```
+   - **Horizontal Scaling**: The deployment was configured with a minimum of two replicas to ensure high availability and fault tolerance.
 
-Open http://localhost:8000/api/users with your browser to see the result.
+4. **Documentation**
 
-### Features
+   The following diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
 
-These services can perform,
+   - Development Architecture Diagram:
 
-#### Create User
+     ![Development Architecture](development_architecture.png)
 
-To create a user, the endpoint **/api/users** must be consumed with the following parameters:
+   - Production Architecture Diagram:
 
-```bash
-  Method: POST
-```
+     ![Production Architecture](production_architecture.png)
 
-```json
-{
-    "dni": "dni",
-    "name": "name"
-}
-```
+   - AKS Deployment Diagram:
 
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
+     ![AKS Deployment](aks_deployment.png)
 
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
+   The documentation for the project should include these diagrams along with a detailed explanation of each step taken during the deployment process.
 
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "error": "error"
-}
-```
-
-#### Get Users
-
-To get all users, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-[
-    {
-        "id": 1,
-        "dni": "dni",
-        "name": "name"
-    }
-]
-```
-
-#### Get User
-
-To get an user, the endpoint **/api/users/<id>** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the user id does not exist, we will receive status 404 and the following message:
-
-```json
-{
-    "error": "User not found: <id>"
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "errors": [
-        "error"
-    ]
-}
-```
-
-## License
-
-Copyright © 2023 Devsu. All rights reserved.
+Please note that the mentioned steps are for illustrative purposes and should be adjusted according to your specific deployment requirements and architecture.
