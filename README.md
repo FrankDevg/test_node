@@ -14,7 +14,7 @@ For the deployment of this application, the following decisions were made:
 
 2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
-   ![Pipeline Diagram](pipeline.png)
+   ![Pipeline Diagram](https://media.discordapp.net/attachments/789543560374255679/1120775399341834371/d3265c7f-c59e-48a6-ba84-da53ef26b936.png?width=175&height=422)
 
    - **Code Build**: The application's source code is built and compiled to generate the executable files and necessary artifacts.
 
