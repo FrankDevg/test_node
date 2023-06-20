@@ -16,7 +16,6 @@ For the deployment of this application, the following decisions were made:
 
 2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
-
    - **Code Build**: The application's source code is built and compiled to generate the executable files and necessary artifacts.
 
    - **Unit Tests**: Automated tests are executed to verify the correctness of the application's individual units or components.
@@ -38,7 +37,7 @@ For the deployment of this application, the following decisions were made:
      docker push your-container-registry/your-image-name:tag
      ```
 
-   - **Copy K8s and Deploy Kubernetes**:  The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources. The following commands are used:
+   - **Copy K8s and Deploy Kubernetes**: The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources. The following commands are used:
 
      ```bash
      # Apply the Kubernetes manifests
@@ -61,11 +60,8 @@ For the deployment of this application, the following decisions were made:
    
    ![Pipeline Diagram](https://media.discordapp.net/attachments/789543560374255679/1120775399341834371/d3265c7f-c59e-48a6-ba84-da53ef26b936.png?width=175&height=422)
 
-
    
 4. **Kubernetes Deployment**: The Dockerized application was deployed on Kubernetes. The deployment was set up to ensure the application is production-ready. The following resources were used:
-
-
 
    - **ConfigMaps**: Kubernetes ConfigMaps were used to store configuration data that can be consumed by the application.
 
@@ -82,9 +78,7 @@ For the deployment of this application, the following decisions were made:
 
   ![image](https://media.discordapp.net/attachments/789543560374255679/1120783395828543498/65b010b9-fdbe-4daa-9e54-d43a3b62acdc.png?width=1025&height=378)
 
-
-
-   The  diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
+   The diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
 
    - Development Architecture Diagram
 
