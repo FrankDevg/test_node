@@ -100,7 +100,7 @@ For the POST request, use the following JSON body:
 ```json
  {
     "name": "John Doe1",
-    "dni": "123456781"
+    "dni": "123456744"
   }
 ```
 You can access the postman collection here:
