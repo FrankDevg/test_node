@@ -87,3 +87,18 @@ For the deployment of this application, the following decisions were made:
    - AKS Deployment Diagram Process
      
   ![image](https://media.discordapp.net/attachments/789543560374255679/1120783475193159772/6e49ac19-1bfe-44b3-a9b5-3b795111cf22.png?width=979&height=422)
+
+### Accessing the Resource with Postman
+
+To access the resource using Postman, you can use the following endpoints:
+
+- GET request: `http://20.120.120.202:80/api/users`
+- POST request: `http://20.120.120.202:80/api/users`
+
+For the POST request, use the following JSON body:
+
+```json
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com"
+}
