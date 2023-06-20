@@ -98,7 +98,8 @@ To access the resource using Postman, you can use the following endpoints:
 For the POST request, use the following JSON body:
 
 ```json
-{
-  "name": "John Doe",
-  "email": "johndoe@example.com"
-}
+ {
+    "name": "John Doe1",
+    "dni": "123456781"
+  }
+
