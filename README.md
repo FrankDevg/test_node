@@ -102,4 +102,5 @@ For the POST request, use the following JSON body:
     "name": "John Doe1",
     "dni": "123456781"
   }
-
+You can access the postman collection here:
+https://www.postman.com/frankdevg/workspace/devsu-test
