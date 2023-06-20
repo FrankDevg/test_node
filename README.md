@@ -12,7 +12,7 @@ For the deployment of this application, the following decisions were made:
    - Port configuration
    - Health check setup
      
- ![image](https://github.com/FrankDevg/test_node/assets/52903207/e0bda2da-3476-4fc0-accc-e64589ec26e4)
+ ![image](https://media.discordapp.net/attachments/789543560374255679/1120783431555633163/44fa212d-1c87-468a-8d76-73e0c3d2043b.png?width=968&height=422)
 
 2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
@@ -46,17 +46,18 @@ For the deployment of this application, the following decisions were made:
    - **Ingress**: An Ingress resource was defined to expose the application to external traffic. However, it is important to note that in the given scenario, the Ingress functionality was not fully implemented due to resource constraints.
 
    - **Horizontal Scaling**: The deployment was configured with a minimum of two replicas to ensure high availability and fault tolerance.
-  ![image](https://media.discordapp.net/attachments/789543560374255679/1120773317125750804/adef2312-2e02-4440-a2c3-2917248e5d22.png?width=1025&height=388)
+  ![image](https://media.discordapp.net/attachments/789543560374255679/1120783395828543498/65b010b9-fdbe-4daa-9e54-d43a3b62acdc.png?width=1025&height=378)
 
-5. **Documentation**
 
-   The following diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
+
+   The  diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
 
    - Development Architecture Diagram
 
    - Production Architecture Diagram
 
-   - AKS Deployment Diagram:
+   - AKS Deployment Diagram Process
+     
+  ![image](https://media.discordapp.net/attachments/789543560374255679/1120783475193159772/6e49ac19-1bfe-44b3-a9b5-3b795111cf22.png?width=979&height=422)
 
-   The documentation for the project should include these diagrams along with a detailed explanation of each step taken during the deployment process.
 
