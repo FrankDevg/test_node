@@ -26,7 +26,7 @@ For the deployment of this application, the following decisions were made:
    - **Code Coverage**: Code coverage tools are employed to measure the percentage of code exercised by the automated tests.
 
    - **Docker Build & Push**: The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment.
-   - **Copy K8s and Deploy Kubernetes **:  The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources.
+   - **Copy K8s and Deploy Kubernetes**:  The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources.
 
 
    ![image](https://github.com/FrankDevg/test_node/assets/52903207/37c4d1e0-318d-4a65-b8b5-ce1b08fc1a27)
