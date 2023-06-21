@@ -12,8 +12,7 @@ For the deployment of this application, the following decisions were made:
    - Port configuration
    - Health check setup
      
- ![Development Environment Architecture](![image](https://github.com/FrankDevg/test_node/assets/52903207/85803e20-f986-4f75-9111-8ac0abed1ab4)
-)
+ ![Development Environment Architecture](https://github.com/FrankDevg/test_node/assets/52903207/85803e20-f986-4f75-9111-8ac0abed1ab4)
 
 2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
