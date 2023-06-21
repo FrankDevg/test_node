@@ -36,7 +36,10 @@ For the deployment of this application, the following decisions were made:
      # Push the Docker image to the container registry
      docker push frankdevg/node-test:latest
      ```
-
+You can pull the image docker:
+ ```bash
+docker pull frankdevg/test-node
+```
    - **Run Trivy Vulnerability Scan**: To scan the Docker image for vulnerabilities using Trivy.This code will download Trivy, extract it, and then scan the Docker image "frankdevg/test-node:latest" for    vulnerabilities using Trivy. The --exit-code 1 flag ensures that the scan will exit with a non-zero status code if vulnerabilities are found, and the --no-progress flag disables the    progress bar during the scan.
      ```bash
       # Download and extract Trivy
