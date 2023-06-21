@@ -116,3 +116,62 @@ For the POST request, use the following JSON body:
 ```
 You can access the postman collection here:
 https://www.postman.com/frankdevg/workspace/devsu-test
+
+
+## Terraform Commands
+
+To deploy the infrastructure on Azure using Terraform, follow these steps:
+
+1. Install Azure CLI (az), Terraform, and kubectl on your machine.
+2. Authenticate with Azure using `az login` and follow the prompts.
+3. Change to the directory where your Terraform configuration files are located.
+4. Initialize Terraform with `terraform init` to download the required provider plugins.
+5. Modify the Terraform configuration files as needed to define your desired infrastructure.
+6. Run `terraform plan` to see the execution plan and verify the changes that will be made.
+7. If the plan looks good, execute `terraform apply` to deploy the infrastructure.
+8. Review the changes that Terraform will make and confirm by typing `yes` when prompted.
+
+Here are the commands in sequence:
+
+```bash
+# Install Azure CLI (az), Terraform, and kubectl
+# Follow the official documentation for your operating system
+
+# Authenticate with Azure CLI
+az login
+
+# Change to the Terraform configuration directory
+cd /path/to/terraform/files
+
+# Initialize Terraform
+terraform init
+
+# Modify the Terraform configuration files as needed
+
+# Plan the Terraform changes
+terraform plan
+
+# Deploy the infrastructure
+terraform apply
+
+# Review the changes and confirm by typing "yes"
+
+```
+## Be Mindful of Secrets and Environment Variables
+
+It is crucial to maintain the security of secrets and environment variables in your application. These contain sensitive information such as database credentials, API keys, and passwords, which could compromise security if mishandled. Here are some best practices to follow:
+
+1. **Avoid including secrets in source code**: Avoid directly including secrets in your source code, as this could expose them to unauthorized access. Use secure methods for storing and accessing secrets, such as environment variables or secret management services.
+
+2. **Use environment variables**: Instead of storing secrets in configuration files or source code, use environment variables to access them. This provides an additional layer of security, as secrets are not directly stored in visible code or files.
+
+3. **Protect your configuration files**: If you need to store secrets in configuration files, ensure that these files are properly protected. Limit access permissions to the files and consider encrypting them to prevent unauthorized reading.
+
+4. **Utilize secret management services**: Consider using specialized secret management services such as Azure Key Vault or AWS Secrets Manager. These services provide a secure environment for storing and managing your secrets, allowing controlled access and automated key rotation.
+
+5. **Avoid printing or logging secrets**: Ensure that you do not print or log secrets in your application's logs or outputs. This can expose sensitive information and increase the risk of security breaches.
+
+Remember, the security of your secrets and environment variables is critical for protecting your applications and data. Follow security best practices and keep your secrets confidential at all times.
+
+
+
