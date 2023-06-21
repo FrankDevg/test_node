@@ -68,7 +68,7 @@ For the deployment of this application, the following decisions were made:
      kubectl get ingress
      ```
 # Pipeline Process 
-   ![Pipeline Process](https://github.com/FrankDevg/test_node/assets/52903207/37c4d1e0-318d-4a65-b8b5-ce1b08fc1a27)
+   ![Pipeline Process](https://github.com/FrankDevg/test_node/assets/52903207/520fdde9-b6ef-40f9-884a-aa148dd4cce6)
    
    ![Pipeline Diagram](https://media.discordapp.net/attachments/789543560374255679/1120775399341834371/d3265c7f-c59e-48a6-ba84-da53ef26b936.png?width=175&height=422)
 
