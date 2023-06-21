@@ -28,13 +28,13 @@ For the deployment of this application, the following decisions were made:
 
      ```bash
      # Build the Docker image
-     docker build -t your-image-name .
+     docker build -t node-test .
 
      # Tag the Docker image
-     docker tag your-image-name your-container-registry/your-image-name:tag
+     docker tag node-test frankdevg/node-test:tag
 
      # Push the Docker image to the container registry
-     docker push your-container-registry/your-image-name:tag
+     docker push frankdevg/node-test:tag
      ```
 
    - **Run Trivy Vulnerability Scan**: To scan the Docker image for vulnerabilities using Trivy.This code will download Trivy, extract it, and then scan the Docker image "frankdevg/test-node:latest" for    vulnerabilities using Trivy. The --exit-code 1 flag ensures that the scan will exit with a non-zero status code if vulnerabilities are found, and the --no-progress flag disables the    progress bar during the scan.
@@ -52,7 +52,7 @@ For the deployment of this application, the following decisions were made:
 
      ```bash
      # Apply the Kubernetes manifests
-     kubectl apply -f your-kubernetes-manifests.yaml
+     kubectl apply -f my-app-configmap.yaml -f my-app-secret.yaml -f my-app-ingress.yaml -f my-app-deployment.yaml -f my-app-service.yaml -f my-app-hpa.yaml -f my-app-pdb.yaml
 
      # Check the deployment status
      kubectl get deployments
