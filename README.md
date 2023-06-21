@@ -37,6 +37,17 @@ For the deployment of this application, the following decisions were made:
      docker push your-container-registry/your-image-name:tag
      ```
 
+   - **Run Trivy Vulnerability Scan**: To scan the Docker image for vulnerabilities using Trivy.This code will download Trivy, extract it, and then scan the Docker image "frankdevg/test-node:latest" for    vulnerabilities using Trivy. The --exit-code 1 flag ensures that the scan will exit with a non-zero status code if vulnerabilities are found, and the --no-progress flag disables the    progress bar during the scan.
+     ```bash
+      # Download and extract Trivy
+      wget https://github.com/aquasecurity/trivy/releases/download/v0.17.2/trivy_0.17.2_Linux-64bit.tar.gz
+      tar zxvf trivy_0.17.2_Linux-64bit.tar.gz
+      
+      # Run Trivy vulnerability scan on the Docker image
+      ./trivy --exit-code 1 --no-progress frankdevg/test-node:latest
+
+     ```
+
    - **Copy K8s and Deploy Kubernetes**: The Docker image is built using the Dockerfile, and it is pushed to a container registry for later deployment. In the deployment process, Kubernetes manifests are created to define the desired state of the application in the Kubernetes cluster. These manifests include the deployment, service, config maps, secrets, and ingress resources. The following commands are used:
 
      ```bash
