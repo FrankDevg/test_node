@@ -88,7 +88,7 @@ For the deployment of this application, the following decisions were made:
      kubectl scale deployment your-deployment-name --replicas=2
      ```
 
-  ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1120783395828543498/65b010b9-fdbe-4daa-9e54-d43a3b62acdc.png?width=1025&height=378)
+  ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1120947597796982845/image.png?width=1441&height=564)
 ![Backend Services](https://github.com/FrankDevg/test_node/assets/52903207/77e70482-420d-49ae-9839-d3895a13045d)
 
 
