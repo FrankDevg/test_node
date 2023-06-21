@@ -31,10 +31,10 @@ For the deployment of this application, the following decisions were made:
      docker build -t node-test .
 
      # Tag the Docker image
-     docker tag node-test frankdevg/node-test:tag
+     docker tag node-test frankdevg/node-test:latest
 
      # Push the Docker image to the container registry
-     docker push frankdevg/node-test:tag
+     docker push frankdevg/node-test:latest
      ```
 
    - **Run Trivy Vulnerability Scan**: To scan the Docker image for vulnerabilities using Trivy.This code will download Trivy, extract it, and then scan the Docker image "frankdevg/test-node:latest" for    vulnerabilities using Trivy. The --exit-code 1 flag ensures that the scan will exit with a non-zero status code if vulnerabilities are found, and the --no-progress flag disables the    progress bar during the scan.
