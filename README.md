@@ -97,7 +97,7 @@ For the deployment of this application, the following decisions were made:
 
    - Development Architecture Diagram
 
-   - Production Architecture Diagram
+   - Deployment Architecture Diagram
 
    - AKS Deployment Diagram Process
      
