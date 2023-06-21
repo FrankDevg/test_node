@@ -12,7 +12,8 @@ For the deployment of this application, the following decisions were made:
    - Port configuration
    - Health check setup
      
- ![image](https://media.discordapp.net/attachments/789543560374255679/1120783431555633163/44fa212d-1c87-468a-8d76-73e0c3d2043b.png?width=968&height=422)
+ ![Development Environment Architecture](![image](https://github.com/FrankDevg/test_node/assets/52903207/85803e20-f986-4f75-9111-8ac0abed1ab4)
+)
 
 2. **Pipeline as Code**: A pipeline was implemented as code to automate the build and deployment process. The pipeline includes the following steps:
 
@@ -66,8 +67,8 @@ For the deployment of this application, the following decisions were made:
      # Check the ingress status
      kubectl get ingress
      ```
-
-   ![image](https://github.com/FrankDevg/test_node/assets/52903207/37c4d1e0-318d-4a65-b8b5-ce1b08fc1a27)
+# Pipeline Process 
+   ![Pipeline Process](https://github.com/FrankDevg/test_node/assets/52903207/37c4d1e0-318d-4a65-b8b5-ce1b08fc1a27)
    
    ![Pipeline Diagram](https://media.discordapp.net/attachments/789543560374255679/1120775399341834371/d3265c7f-c59e-48a6-ba84-da53ef26b936.png?width=175&height=422)
 
@@ -87,7 +88,11 @@ For the deployment of this application, the following decisions were made:
      kubectl scale deployment your-deployment-name --replicas=2
      ```
 
-  ![image](https://media.discordapp.net/attachments/789543560374255679/1120783395828543498/65b010b9-fdbe-4daa-9e54-d43a3b62acdc.png?width=1025&height=378)
+  ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1120783395828543498/65b010b9-fdbe-4daa-9e54-d43a3b62acdc.png?width=1025&height=378)
+![Backend Services](https://github.com/FrankDevg/test_node/assets/52903207/77e70482-420d-49ae-9839-d3895a13045d)
+
+
+
 
    The diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
 
