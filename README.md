@@ -1,3 +1,25 @@
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://media.discordapp.net/attachments/836284594948407366/1079636506022527096/image.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h1 align="center">DevOps</h1>
+
+  <p align="center">
+  
+    <br />
+     <!--a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a-->
+    <br />
+    <br />
+    <a href="http://20.242.129.177:8080/client">View Demo</a>
+    ·
+    <!--a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a-->
+    ·
+    <!--a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a-->
+  </p>
+</div>
 # Demo DevOps Node.js
 
 This is a simple application to be used in the technical test of DevOps.
