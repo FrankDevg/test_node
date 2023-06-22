@@ -90,8 +90,8 @@ docker pull frankdevg/test-node
      kubectl scale deployment your-deployment-name --replicas=2
      ```
 
-  ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1120947597796982845/image.png?width=1441&height=564)
-![Backend Services](https://github.com/FrankDevg/test_node/assets/52903207/77e70482-420d-49ae-9839-d3895a13045d)
+  ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1121315692394844210/image.png?width=1277&height=473)
+![Backend Services](https://cdn.discordapp.com/attachments/789543560374255679/1121315498735439933/image.png)
 
 5. **Zone DNS**: A DNS zone was configured to map the domain name "frankdevgweb.com" to the IP address of the LoadBalancer associated with the Ingress controller. This enables users to access the application by simply entering "frankdevgweb.com" in their web browser, as the DNS resolution process translates the domain name to the corresponding IP address and routes the requests to the Kubernetes cluster
 
