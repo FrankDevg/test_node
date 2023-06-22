@@ -93,7 +93,7 @@ docker pull frankdevg/test-node
   ![Deployment Enviroment Architecture](https://media.discordapp.net/attachments/789543560374255679/1120947597796982845/image.png?width=1441&height=564)
 ![Backend Services](https://github.com/FrankDevg/test_node/assets/52903207/77e70482-420d-49ae-9839-d3895a13045d)
 
-
+5. **Zone DNS**: A DNS zone was configured to map the domain name "frankdevgweb.com" to the IP address of the LoadBalancer associated with the Ingress controller. This enables users to access the application by simply entering "frankdevgweb.com" in their web browser, as the DNS resolution process translates the domain name to the corresponding IP address and routes the requests to the Kubernetes cluster
 
 
    The diagrams illustrate the development and production architectures, as well as the deployment setup for AKS (Azure Kubernetes Service):
@@ -110,15 +110,15 @@ docker pull frankdevg/test-node
 
 To access the resource using Postman, you can use the following endpoints:
 
-- GET request: `http://20.120.120.202:80/api/users`
-- POST request: `http://20.120.120.202:80/api/users`
+- GET request: `http://frankdevgweb.com/api/users`
+- POST request: `http://frankdevgweb.com/api/users`
 
 For the POST request, use the following JSON body:
 
 ```json
  {
     "name": "John Doe1",
-    "dni": "123456744"
+    "dni": "12345624"
   }
 ```
 You can access the postman collection here:
