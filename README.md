@@ -124,7 +124,29 @@ For the POST request, use the following JSON body:
 You can access the postman collection here:
 https://www.postman.com/frankdevg/workspace/devsu-test
 
+## Installation of Ingress-Nginx
 
+To install the Ingress-Nginx controller on your Kubernetes cluster, you can follow the steps below:
+
+1. Ensure that you have the necessary permissions and access to your Kubernetes cluster.
+2. Open a terminal or command prompt and execute the following commands:
+   
+```bash
+# Add the Ingress-Nginx Helm repository
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+# Update the Helm repositories
+helm repo update
+
+# Install the Ingress-Nginx chart
+helm install ingress-nginx ingress-nginx/ingress-nginx
+```
+3. Wait for the installation to complete. You can check the status of the installation using the command kubectl get pods -n ingress-nginx. Ensure that all the pods are in the "Running" state before proceeding.
+4. Once the Ingress-Nginx controller is successfully installed, you can create your Ingress resources to expose your services to external traffic.
+5. To verify the installation, you can use the following command to check the service:
+```bash
+   kubectl get service -n ingress-nginx
+```   
 ## Terraform Commands
 
 To deploy the infrastructure on Azure using Terraform, follow these steps:
